@@ -1,0 +1,129 @@
+<div id=D__ID>
+    <a style="float:right;display:inline-block;padding-right:10px" target=_blank href="https://github.com/vmiis/projects/blob/master/README.md">How to run these open source projects on a local computer</a>        
+    <div style='padding:10px 0 0 20px;'>
+        <form class="form-inline">
+            <input id=keywords__ID class=form-control style='width:360px' placeholder="keywords">
+            <button id=apply__ID type=button class="btn btn-secondary" title='Load'>Refresh</button>
+        </form>
+    </div>
+    <div id=panel__ID class=panel__ID>
+        <a target=_blank href='aaxsys/index.html'>Aaxsys</a><br>
+        <a target=_blank href='basic-website-template/index.html'>Basic website template</a><br>
+        <a target=_blank href='body-mass-index/index.html'>Body mass index</a><br>
+        <a target=_blank href='bookkeeping-wappsystem/index.html'>Bookkeeping for wappsystem</a><br>
+        <a target=_blank href='bubble-background/index.html'>Bubble background</a><br>
+        <a target=_blank href='cansleep/index.html'>CANSLEEP</a><br>
+        <a target=_blank href='cansleep-online-questionnaire/index.html'>CANSLEEP online questionnaire</a><br>
+        <a target=_blank href='car-booking/index.html'>Car booking</a><br>
+        <a target=_blank href='clever-lights/index.html'>Clever lights</a><br>
+        <a target=_blank href='enquiry/index.html'>Enquiry</a><br>
+        <a target=_blank href='epworth-sleepiness-scale/index.html'>Epworth sleepiness scale</a><br>
+        <a target=_blank href='equipment-booking/index.html'>Equipment booking</a><br>
+        <a target=_blank href='event-calendar/index.html'>Event calendar</a><br>
+        <a target=_blank href='facebook/index.html'>Facebook</a><br>
+        <a target=_blank href='first-aid-officer/index.html'>First aid officer</a><br>
+        <a target=_blank href='fitness/index.html'>Fitness</a><br>
+        <a target=_blank href='flat-trial/index.html'>Flat trial</a><br>
+        <a target=_blank href='fountains-illumination/index.html'>Fountains illumination</a><br>
+        <a target=_blank href='giving/index.html'>Giving</a><br>
+        <a target=_blank href='google-firebase/index.html'>Google firebase</a><br>
+        <a target=_blank href='hotel/index.html'>Hotel</a><br>
+        <a target=_blank href='invoice-management/index.html'>Invoice management</a><br>
+        <a target=_blank href='layout-with-fixed-header-and-footer/index.html'>Layout with fixed header and footer</a><br>
+        <a target=_blank href='layout-with-fixed-header-and-scrollable-footer/index.html'>Layout with fixed header and scrollable footer</a><br>
+        <a target=_blank href='layout-with-scrollable-header-and-footer-1/index.html'>Layout with scrollable header and footer 1</a><br>
+        <a target=_blank href='layout-with-scrollable-header-and-footer-2/index.html'>Layout with scrollable header and footer 2</a><br>
+        <a target=_blank href='layout-with-side-nav-and-fixed-footer/index.html'>Layout with side nav and fixed footer</a><br>
+        <a target=_blank href='medical-practitioner/index.html'>Medical practitioner</a><br>
+        <a target=_blank href='nasa-background/index.html'>Nasa background</a><br>
+        <a target=_blank href='nyan-background/index.html'>Nyan background</a><br>
+        <a target=_blank href='particle-background/index.html'>Particle background</a><br>
+        <a target=_blank href='policies-and-forms/index.html'>Policies-and-forms</a><br>
+        <a target=_blank href='purchase-order-request/index.html'>Purchase order request</a><br>
+        <a target=_blank href='restaurant/index.html'>Restaurant</a><br>
+        <a target=_blank href='room-booking/index.html'>Room booking</a><br>
+        <a target=_blank href='sleep-fix/index.html'>Sleep-fix</a><br>
+        <a target=_blank href='survey/index.html'>Survey</a><br>
+        <a target=_blank href='tom/index.html'>Tom</a><br>
+        <a target=_blank href='unemployment/index.html'>Unemployment</a><br>
+        <a target=_blank href='word-pair-association/index.html'>Word pair association</a><br>
+        <a target=_blank href='white/index.html'>White</a><br>
+        <a target=_blank href='woolcock365/index.html'>Woolcock 365</a><br>
+        <a target=_blank href='woolcock-template/index.html'>Woolcock template</a><br>
+    </div>
+    <script>
+        $('#panel__ID a').each(function(){
+            if($vm.localhost==true){
+                var h=$(this).attr('href');
+                h="../projects/sites/"+h;
+                $(this).attr('href',h);
+            }
+            else{
+                var h=$(this).attr('href');
+                h="https://projects.vmiis.com/sites/"+h;
+                $(this).attr('href',h);
+            }
+        })
+        $('#apply__ID').on('click',function(){
+            $('#panel__ID a').show();
+            $('#panel__ID br').show();
+            var words=$('#keywords__ID').val().split(' ');
+            $('#panel__ID a').each(function(){
+                var name=$(this).html().toUpperCase();
+                for(var i=0;i<words.length;i++){
+                    var word=words[i].toUpperCase(); 
+                    if(word!=""){
+                        if(name.indexOf(word)==-1){
+                            $(this).hide();
+                            $(this).next('br').hide();
+                            break;
+                        }
+                    }
+                }
+            })
+        })
+        //--------------------------------------------------------
+    </script>
+    <style>
+        #D__ID{
+            background-color:#fff;
+            height:100%;
+            overflow: auto;
+            animation: vm_module_fadein 1.0s;
+        }
+        .panel__ID{
+            padding:30px 50px 10px 50px;
+            font-size:14px;
+    		max-width: 100%;
+    		column-count: 4;
+    		column-width: 300px;
+    		column-gap: 30px;
+            font-size:14px;
+        }
+        a {
+            text-decoration: none;
+        }
+        a:link {
+            color:#555;
+        }
+        a:visited {
+            color:#555;
+        }
+        a:hover {
+            color:red;
+        }
+        a:active {
+            color:#555;
+        }
+        #keywords__ID::placeholder {
+            color: #ccc;
+            padding-left:6px;
+        }        
+        @media screen and (max-width:768px){
+            .panel__ID{
+                padding:0;
+            }
+        }
+    </style>
+
+</html>
