@@ -18,7 +18,7 @@
     </body>
     <script boot-up>
         //------------------------------------
-        $vm={};$vm.ver=[0.02,0.02]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
+        $vm={};$vm.ver=[0.03,0.02]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
         //$vm.debug=1;
         //------------------------------------
         //setup modules location
@@ -35,6 +35,7 @@
         $vm.module_list={
             //you can add modules here directly
             "home":	        {url:"$H/0/home.html",router:1},
+            "demo":         {url:"$H/m/demo.html"},
             "frame":	    {url:"$H/0/frame.html"},
             "app":	        {url:"$H/0/app.html"},
             "header":	    {url:"$H/0/header.html"},
@@ -46,8 +47,11 @@
         $vm.app_modules=[
             //you can add a js file that will add mmodules to the $vm.module_list
             "$H/module-list.js",
+            "$M1/module-list.js",
         ]
         for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$H',$vm.hosting_path);
+        $vm.m1_path='https://modules.vmiis.com'; if($vm.localhost==true) $vm.m1_path='http://'+window.location.hostname+':'+window.location.port+'/vmiis/modules'; 
+        for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$M1',$vm.m1_path);
         //------------------------------------
         //called by framework
         $vm.start=function(){
