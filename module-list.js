@@ -1,7 +1,7 @@
 (function(){
     //-------------------------------------------------------------------------------------
     var modules={
-        "projects":             {url:"$H/m/projects.html"},
+        "projects":             {url:"$H/m/projects.html",router:1},
         "demo":                 {url:"$H/m/demo.html"},
         //"module-editor":        {url:"https://vm.vmiis.com/component/m/module-editor.html",router:1},
     }
