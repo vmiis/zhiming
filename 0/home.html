@@ -110,7 +110,9 @@
 		$('#D__ID').on('load',function(){
 		})
 		$('#get_in__ID').on('click',function(){
-			$vm.load_module("projects",'',{})
+			if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/');
+			else window.open('http://projects.vmiis.com/sites/');
+			//$vm.load_module("projects",'',{})
 		})
 		$vm.load_component('demo','demo__ID',{})
 	</script>

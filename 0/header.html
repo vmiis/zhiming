@@ -44,6 +44,12 @@
         $('#vm-menu a').on('click',function(e){
             e.preventDefault();
             var href=$(this).attr('href');
+            if(href=="?/projects"){
+                if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/');
+			    else window.open('http://projects.vmiis.com/sites/');
+                return;
+            }
+            
             if(href!=undefined && href!='' && href.substring(0,8)=="https://"){ window.open(href); return;}
             if(href!=undefined && href!=''){
                 if($vm.menu_click!=undefined) $vm.menu_click(href);
