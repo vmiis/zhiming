@@ -28,6 +28,9 @@
 				<p>
 					<a id=get_in__ID class='btn btn-success' >Open Source Projects</a>
 				</p>
+				<p>
+					<a id=get_bp__ID class='btn btn-success' >Business Portal</a>
+				</p>
 		
 				<br><br>
 			</div>
@@ -111,8 +114,13 @@
 		$('#D__ID').on('load',function(){
 		})
 		$('#get_in__ID').on('click',function(){
-			if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/');
+			if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/vmiis/projects/sites/');
 			else window.open('http://projects.vmiis.com/sites/');
+			//$vm.load_module("projects",'',{})
+		})
+		$('#get_bp__ID').on('click',function(){
+			if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/vmiis/business-portal/');
+			else window.open('http://portal.vmiis.com/');
 			//$vm.load_module("projects",'',{})
 		})
 		$vm.load_component('demo','demo__ID',{})
