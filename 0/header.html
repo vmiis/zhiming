@@ -45,8 +45,9 @@
             e.preventDefault();
             var href=$(this).attr('href');
             if(href=="?/projects"){
-                if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/');
-			    else window.open('http://projects.vmiis.com/sites/');
+                //if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/');
+                //else 
+                window.open('http://portal.vmiis.com/');
                 return;
             }
             
