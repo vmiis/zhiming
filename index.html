@@ -17,7 +17,7 @@
         <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"></script>
         <script boot-up>
             //------------------------------------
-            $vm={};$vm.ver=[0.53,0.08]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
+            $vm={};$vm.ver=[0.55,0.09]; //increase ver[0] if any module changed, increase ver[1] if vm.js changed
             //$vm.debug=1;
             //------------------------------------
             //setup modules location
@@ -26,30 +26,29 @@
             //------------------------------------
             //where are your start modules
             $vm.start_modules=[
-                "$H/0/frame.html",  //app frame work
+                "$H/modules/site/frame.html",  //app frame work
             ]
             for(i in $vm.start_modules) $vm.start_modules[i]=$vm.start_modules[i].replace('$H',$vm.hosting_path);
             //------------------------------------
             //modules used immediately
             $vm.module_list={
                 //you can add modules here directly
-                "home":	        {url:"$H/0/home.html",router:1},
-                "demo":         {url:"$H/m/demo.html"},
-                "frame":	    {url:"$H/0/frame.html"},
-                "app":	        {url:"$H/0/app.html"},
-                "header":	    {url:"$H/0/header.html"},
-                "footer":	    {url:"$H/0/footer.html"},
+                "home":	        {url:"$H/modules/site/home.html",router:1},
+                "frame":	    {url:"$H/modules/site/frame.html"},
+                "app":	        {url:"$H/modules/site/app.html"},
+                "header":	    {url:"$H/modules/site/header.html"},
+                "footer":	    {url:"$H/modules/site/footer.html"},
             };
             for(p in $vm.module_list) $vm.module_list[p].url=$vm.module_list[p].url.replace('$H',$vm.hosting_path);
             //------------------------------------
             //all other modules, used on demand 
             $vm.app_modules=[
                 //you can add a js file that will add mmodules to the $vm.module_list
-                "$H/module-list.js",
+                "$H/modules/module-list.js",
             ]
             for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$H',$vm.hosting_path);
-            $vm.m1_path='https://modules.vmiis.com'; if($vm.localhost==true) $vm.m1_path='http://'+window.location.hostname+':'+window.location.port+'/vmiis/modules'; 
-            for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$M1',$vm.m1_path);
+            //$vm.m1_path='https://mockup.vmiis.com'; if($vm.localhost==true) $vm.m1_path='http://'+window.location.hostname+':'+window.location.port+'/vmiis/modules'; 
+            //for(i in $vm.app_modules) $vm.app_modules[i]=$vm.app_modules[i].replace('$M1',$vm.m1_path);
             //------------------------------------
             //called by framework
             $vm.start=function(){

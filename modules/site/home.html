@@ -1,0 +1,66 @@
+<div id=D__ID>
+	<div id=page1__ID class=home_page_1>
+		<div class="container-fluid" style='max-width:800px'>
+			<div class="text-center panel__ID">
+				<h3>I am happy to help people</h3>
+				<hr style='border-top:1px solid #f05f40; margin:12px 0'></hr>
+					• Setup a personal static website using GitHub Pages and Cloudflare free services<br>
+					• Build a data driven microservices application by connecting your front end interface to your database or third party data services.<br>
+					• Customised solutions for business automation.
+					<br><br>
+					<br><span style='font-size:80%;color:#eee'>Contact email: zzm.vmiis@gmail.com</span>
+					<br><br>
+				<p>
+					<a id=get_bp__ID class='btn btn-success' >Web App Mockup</a>
+				</p>
+		
+				<br><br>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('#D__ID').on('load',function(){
+		})
+		$('#get_in__ID').on('click',function(){
+			if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/vmiis/mockup/');
+			else window.open('http://mockup.vmiis.com/');
+			//$vm.load_module("projects",'',{})
+		})
+		$('#get_bp__ID').on('click',function(){
+			if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/vmiis/mockup/');
+			else window.open('http://mockup.vmiis.com/');
+			//$vm.load_module("projects",'',{})
+		})
+	</script>
+	<style>
+		#D__ID{
+			height:100%;
+	        overflow:auto;
+			/*animation: vm_module_fadein 1.0s, D__ID 3s;*/
+		}
+		#page1__ID{
+			display: flex;
+			align-items: center;
+		}
+		.panel__ID{
+			color:#fff;
+			background: rgba(0, 0, 0, 0);
+			border-radius: 25px;
+			padding:10px;
+		}
+		@keyframes D__ID {
+			from {padding-top: 300px;}
+			to {padding-top: 0px;}
+		}
+	    @media screen and (max-width: 992px) {
+	        #D__ID{
+	            animation: vm_module_fadein 1.0s;
+	        }
+	    }
+	</style>
+	<script>
+		function F__ID(){
+			$vm['home_ready']=1;
+		}
+	</script>
+</div>
