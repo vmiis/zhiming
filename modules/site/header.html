@@ -14,7 +14,7 @@
         </div>
         <div menu id="vm-menu">
             <a href="?/home"><i class="fa fa-home"></i> Home</a>
-            <a href="?/projects">Web app mockup</a>
+            <a href="?/projects">Web Portal</a>
             <!--
             <a href="?/tom-control-panel">Control Panel</a>
             <a href="https://backoffice.wappsystem.com.au/">Back Office</a>
@@ -45,8 +45,8 @@
             e.preventDefault();
             var href=$(this).attr('href');
             if(href=="?/projects"){
-                if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/vmiis/mockup/');
-			    else window.open('http://mockup.vmiis.com/');
+                if(window.location.toString().indexOf('localhost')!=-1) window.open('http://localhost:8000/vmiis/web-portal/');
+			    else window.open('http://portal.vmiis.com/');
                 //window.open('http://portal.vmiis.com/');
                 return;
             }
